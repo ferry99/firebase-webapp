@@ -1,0 +1,98 @@
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA9cmPxunLb6okMBEb9hoyYY3KyDhfr_h0",
+    authDomain: "push-notification-12490.firebaseapp.com",
+    databaseURL: "https://push-notification-12490.firebaseio.com",
+    projectId: "push-notification-12490",
+    storageBucket: "push-notification-12490.appspot.com",
+    messagingSenderId: "5617551821"
+  };
+  firebase.initializeApp(config);
+
+  const messaging = firebase.messaging();
+  var database = firebase.database();
+
+  function writeUserData(userId, name) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+    },function(){
+      console.log('RegToken Has Beed Added');
+    });
+  }
+
+  var starCountRef = firebase.database().ref('users/');
+  starCountRef.on('value', function(snapshot) {
+    console.log('Changed' + JSON.stringify(snapshot));
+  });
+
+  messaging.requestPermission()
+  .then(function() {
+    console.log('Notification permission granted. 123');
+    // TODO(developer): Retrieve an Instance ID token for use with FCM.
+    // ...
+
+    messaging.getToken()
+    .then(function(currentToken) {
+        if (currentToken){
+          writeUserData(currentToken,'user1');
+          console.log(currentToken);
+        } else {
+          console.log('No Instance ID token available. Request permission to generate one.');
+        }
+    })
+    .catch(function(err) {
+        console.log('An error occurred while retrieving token. ', err);
+    });
+  })
+
+  .catch(function(err) {
+    console.log('Unable to get permission to notify.', err);
+  });
+
+  messaging.onMessage(function(payload) {
+    alert('Message Recieved')
+    console.log("Message received. ", payload);
+    // ...
+  });
+
+    messaging.onTokenRefresh(function() {
+    messaging.getToken()
+    .then(function(refreshedToken) {
+      console.log('Token refreshed.');
+      // Indicate that the new Instance ID token has not yet been sent to the
+      // app server.
+      setTokenSentToServer(false);
+      // Send Instance ID token to app server.
+      sendTokenToServer(refreshedToken);
+      // ...
+    })
+    .catch(function(err) {
+      console.log('Unable to retrieve refreshed token ', err);
+      showToken('Unable to retrieve refreshed token ', err);
+    });
+  });
+
+//   messaging.setBackgroundMessageHandler(function(payload) {
+//   console.log('[firebase-messaging-sw.js] Received background message ', payload);
+//   // Customize notification here
+//   const notificationTitle = 'Background Message Title';
+//   const notificationOptions = {
+//     body: 'Background Message body.',
+//     icon: '/firebase-logo.png'
+//   };
+
+//   return self.registration.showNotification(notificationTitle,
+//       notificationOptions);
+// }); 
+
+
+
+
+</script>
