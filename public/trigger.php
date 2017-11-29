@@ -1,6 +1,6 @@
 <?php
 
-	function getRegToken(){
+	function getRegToken(){ // Getting registered token name
 		$url = 'https://push-notification-12490.firebaseio.com/users.json?print=pretty';//Google URL
 
 		// prepare the bundle
@@ -12,7 +12,7 @@
 		if ($result === FALSE) {
 		    die('Curl failed: ' . curl_error($ch));
 		}else{
-			//print_r($result);
+			print_r($result);
 			return $result;
 		}
 		// Close connection
@@ -20,7 +20,7 @@
 	}  
 
 
-	function sendToRegToken($regIds){
+	function sendToRegToken($regIds){ //Send Messsage To All Token
 		$curl = curl_init();
 		//print_r($regIds);
 		curl_setopt_array($curl, array(
@@ -49,6 +49,7 @@
 			  echo $response;
 			}
 	}
+
 
 	$regTokenJson = getRegToken();	
 	$regTokenJson = json_decode($regTokenJson);

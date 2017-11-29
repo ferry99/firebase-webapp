@@ -1,0 +1,36 @@
+[debug] [2017-11-29T06:41:34.625Z] ----------------------------------------------------------------------
+[debug] [2017-11-29T06:41:34.627Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-11-29T06:41:34.627Z] CLI Version:   3.15.3
+[debug] [2017-11-29T06:41:34.627Z] Platform:      linux
+[debug] [2017-11-29T06:41:34.627Z] Node Version:  v8.6.0
+[debug] [2017-11-29T06:41:34.627Z] Time:          Wed Nov 29 2017 13:41:34 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:34.627Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-29T06:41:34.688Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-29T06:41:34.688Z] > authorizing via signed-in user
+[debug] [2017-11-29T06:41:34.689Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-29T06:41:34.689Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/XrImNVeQSRhlVdwRlFg81iazY3CGKL5uLkd9s6AgjEl_dUoYCoO3O5BLrrd_Fc04',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Nov 29 2017 13:41:34 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:35.270Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-29T06:41:35.293Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/push-notification-12490  
+ Wed Nov 29 2017 13:41:35 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:36.637Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-29T06:41:36.637Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/push-notification-12490/tokens  
+ Wed Nov 29 2017 13:41:36 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:37.811Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/var/www/html/firebase-FCM'...
+[info] 
+[debug] [2017-11-29T06:41:37.813Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/push-notification-12490  
+ Wed Nov 29 2017 13:41:37 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:39.121Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-29T06:41:39.121Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/5617551821/clients/_:getWebAppConfig  
+ Wed Nov 29 2017 13:41:39 GMT+0700 (WIB)
+[debug] [2017-11-29T06:41:39.957Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+

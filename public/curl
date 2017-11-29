@@ -1,0 +1,14 @@
+curl -X POST -H "Authorization: key=AIzaSyA9cmPxunLb6okMBEb9hoyYY3KyDhfr_h0" -H "Content-Type: application/json" -d '{"notification": {"title": "FCMMessage","body": "This is an FCM Message",},"token": "cT4GMauIjNk:APA91bEeX-whpMnfSikQ3uEOaGCq8uCENfyfM4pHz5qg7ezhbU8qNyuHZMA_cCru5lay8OZxW97u0UufoaQYU_V4cVaKdB0vrduUdQdFzF5adsXvuVZXIDxJEn3g-Xlzrt3Ed3hszRIO"}' "https://fcm.googleapis.com/v1/projects/myproject-b5ae1/messages:send HTTP/1.1"
+
+
+curl -X POST --header "Authorization: key=AAAAAU7VCc0:APA91bH-vh4B1mffSIMZtHxyEkIn6cBE930JfXj-9snYkAcIcKgRLNGMgk6zGQQkIBf8sPJyLiF_rMgemLV2996yxcZr2vtPDApMI8lmsuxecL8konpKzZnoJ7m4ux09fTF2RsrXSZv8" \
+--Header "Content-Type: application/json" \
+-d "{\"to\":\"cT4GMauIjNk:APA91bEeX-whpMnfSikQ3uEOaGCq8uCENfyfM4pHz5qg7ezhbU8qNyuHZMA_cCru5lay8OZxW97u0UufoaQYU_V4cVaKdB0vrduUdQdFzF5adsXvuVZXIDxJEn3g-Xlzrt3Ed3hszRIO\",\"notification\":{\"body\":\"Yellow\"},\"priority\":10}"\
+https://fcm.googleapis.com/fcm/send
+
+curl -H "Content-type: application/json" -H "Authorization:key=AAAAAU7VCc0:APA91bH-vh4B1mffSIMZtHxyEkIn6cBE930JfXj-9snYkAcIcKgRLNGMgk6zGQQkIBf8sPJyLiF_rMgemLV2996yxcZr2vtPDApMI8lmsuxecL8konpKzZnoJ7m4ux09fTF2RsrXSZv8" -X POST -d '{ "data": { "score": "5x1","time": "15:10"},"to" : "ckV4tRBUx9A:APA91bG3gDJz7quG7tm3K1NZ2ffrolDvHBEwf7U_xLNVun6llMgR4Jb2hJ652FXDhO64btpWDsZkrFBd4tYwQ9h7GWtBH0BFtgHsMCTVaJGWDODSmDEJtWvbnsK_U7v7jb5tbjZ24F0d"}' https://fcm.googleapis.com/fcm/send
+
+
+curl 'https://push-notification-12490.firebaseio.com/users.json?print=pretty'
+https://doctorapp-b8180.firebaseio.com/app.json?orderBy="name"&startAt="facebook"&endAt="facebook"
+
